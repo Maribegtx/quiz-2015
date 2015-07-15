@@ -6,6 +6,7 @@ var quizController =require('../controllers/quiz_controller');
 router.get('/', function(req, res) {
   res.render('index', { title: 'QUIZ' });
 });
+router.get('/question', quizController.author);
 router.get('/quizes/question', quizController.question);
 router.get('/quizes/answer', quizController.answer);
 module.exports = router;
