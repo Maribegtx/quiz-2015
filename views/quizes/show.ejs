@@ -1,0 +1,13 @@
+
+<h2>Pregunta:</h2> 
+<p><%=quiz.pregunta%></p>
+<form action="/quizes/<%= quiz.id %>/answer" method="get">
+
+    <input name="respuesta" type="text" placeholder="Responda aquí..."/>
+    <br><br>
+    <input value="Enviar" type="submit">
+  
+</form>
+
+
+

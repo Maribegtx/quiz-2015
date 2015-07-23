@@ -2,6 +2,7 @@ var path= require('path');
 
 //Postgres DATABASE_URL = postgres://user:passwd@host:port/database
 //SQLite DATABASE_URL = sqlite://:@:/
+
 var url =process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
 var DB_name= (url[6]||null);
 var user= (url[2]||null);
@@ -39,6 +40,12 @@ Quiz.count().then(function(count){
 	if(count===0){//La tabla solo se inicializa si está vacía
 		Quiz.create({pregunta:'Capital de Italia',
 					respuesta:'Roma'
+				});
+		Quiz.create({pregunta:'Capital de Portugal',
+					respuesta:'Lisboa'
+				});
+		Quiz.create({pregunta:'Capital de Japón',
+					respuesta:'Tokio'
 				})
 		.then(function(){console.log('Base de datos inicializada')});
 

@@ -1,43 +1,38 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  
-    <title>Preguntas</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    
- <link rel='stylesheet' type='text/css' media='only screen and (min-width:530px) and (min-device-width:481px)'
-    href='/stylesheets/wide.css' />
-    <link rel='stylesheet' type='text/css' media='only screen and (max-width:480px)'
-    href='/stylesheets/smartphone.css' />
-  </head>
-  <body>
-   <div id="page-wrap">
-   <header class="main" id="h1">
-   <h2> QUIZ: El juego de las preguntas</h2>
-   </header>
-   <nav class="main" id="n1" role="navigation">
-
-
-   <span><a href="/">Inicio</a></span><br>
-   <span> <a href="/quizes/question">Preguntas</a></span><br>
-   <span> <a href="/author">Créditos</a></span>
-
-  
-
-   </nav>
-   <section class="main" id="s1">
-   <%-body%>
-   </section>
-   <footer clas="main" id="f1">
-
-
-   <span><a href="http://es.wikipedia.org/wiki/Quiz" target="_blank">¿Qué es QUIZ? </a></span><br>
-   <span><a href="https://github.com/Maribegtx/quiz-2015" target="_blank"> Mi proyecto en GitHub</a></span>
-
-
-    
-</footer>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Preguntas</title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' 
+        type='text/css'
+        media='only screen and (min-width: 530px) and (min-device-width: 481px)'
+        href='/stylesheets/wide.css' />
+  <link rel='stylesheet'
+        type='text/css'
+        media='only screen and (max-width: 480px)' 
+        href='/stylesheets/smartphone.css' />
+</head>
+<body>
+<div id="page-wrap">
+<header  id="h1">
+  <div class="txt">
+    <h1>Quiz: el juego de las preguntas</h1>
+  </div>
+</header>
+<nav  id="n1" role="navigation">
+  <div> <span> <a href="/">Inicio</a></span> <span> <a href="/quizes">Preguntas</a></span> <span> <a href="/author">Créditos</a></span> </div>
+</nav>
+<section class="section" id="s1">
+<div>
+<%- body %>
+<div>
+  </section>
+  <footer clas="main" id="f1"> <span><a href="http://es.wikipedia.org/wiki/Quiz" target="_blank">¿Qué es QUIZ? </a></span><br>
+    <span><a href="https://github.com/Maribegtx/quiz-2015" target="_blank"> Mi proyecto en GitHub</a></span> </footer>
+    <div class="clear"></div>
 </div>
 
-  </body>
+</body>
 </html>
+

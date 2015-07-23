@@ -1,22 +1,21 @@
-
-
 body {
-	background: #333; 
+	background: #333;
 }
-#page-wrap:after{
-	content:"smartphone  layout";
+#page-wrap:after {
+	content: "Smartphone Layout";
 }
-
- h2 span, section h3{
-	display:none;
+h2 span, section h3, label.rem {
+	display: none;
 }
-body{
-	font-size:xx-large;
+body {
+	font-size: xx-large;
 }
-
-
-footer, input{
-	font-size:large;
-
-
+input, button {
+	font-size: x-large;
+}
+footer {
+	font-size: large;
+}
+.quiz_img {
+	float: none;
 }
