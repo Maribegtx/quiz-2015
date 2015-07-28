@@ -1,0 +1,20 @@
+
+<p><% if (errors.length) {%>
+    <span id='ErrorMsgs'>
+      Corregir errores: <br/>
+      <% for (var i in errors) { %>
+        <span> <%= errors[i].message %> </span><br/>
+      <% }%>
+    </span>
+  <% } %></p>
+<label for="preg" class="rem">Pregunta:</label>
+
+<br>
+    <input type="text" name="quiz[pregunta]" id="preg"  value="<%= quiz.pregunta%>"/>
+    <br><br>
+    <label for="resp" class="rem">Respuesta:</label><br>
+    <input type="text" name="quiz[respuesta]" id="resp"  value="<%= quiz.respuesta%>"/><br><br>
+    <a href="/quizes"><button type="button">Cancelar</button>
+    <input value="Salvar" type="submit">
+  
+</form>

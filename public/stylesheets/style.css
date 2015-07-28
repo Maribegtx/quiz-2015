@@ -75,3 +75,6 @@ footer {
 .section {
 	height:auto
 }
+#ErrorMsgs{ 
+	color: #f61; font-size: smaler
+}
