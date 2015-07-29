@@ -80,15 +80,18 @@ exports.update = function(req, res) {
 		var i=0; var errores=new Array();//se convierte en [] con la propiedad message por compatibilida con layout
          for (var prop in errors) errores[i++]={message: errors[prop]}; 
         	res.render('quizes/edit', {quiz: req.quiz, errors: errores});
+        	res.render('quizes/edit', {quiz: req.quiz, errors: errores});;
     } else {
 			req.quiz     // save: guarda campos pregunta y respuesta en DB
         	.save( {fields: ["pregunta", "respuesta"]})
         	.then( function(){ res.redirect('/quizes');});
      }     
 };
+
 // DELETE /quizes/:id
 exports.destroy = function(req, res) {
   req.quiz.destroy().then( function() {
     res.redirect('/quizes');
   }).catch(function(error){next(error)});
 };
+
