@@ -2,8 +2,15 @@
     
     <h2>PREGUNTAS</h2>
     <table>
-    <% var i; for (i=0; i < quizes.length; i++){%>
+    <tr >
+    <td class="borderbotton">TEMA</td>
+    <td class="borderbotton">PREGUNTA</td>
+    <td colspan="2" class="borderbotton"></td>
+    </tr>
     <tr> 
+    <% var i; for (i=0; i < quizes.length; i++){%>
+  
+    <td><%= quizes[i].tema %></td>
     <td><a href="quizes/<%= quizes[i].id%>"><%= quizes[i].pregunta %></a></td>
     <td><a href="quizes/<%= quizes[i].id%>/edit"><button>Editar</button></a></td>
 

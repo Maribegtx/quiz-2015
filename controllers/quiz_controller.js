@@ -1,17 +1,16 @@
 var models=require('../models/models.js')
 
 // Autoload - factoriza el código si ruta incluye :quizId
-exports.load=function(req,res, next, quizId){
-	models.Quiz.find(quizId).then(
-		function(quiz){
-			if(quiz){
-				req.quiz=quiz;
-				next();
-			} else{next(new Error('No existe quizId=' +quizId));}
-		}
-	).catch(function(error){next(error);});	
+exports.load = function(req, res, next, quizId) {
+  models.Quiz.find(quizId).then(
+    function(quiz) {
+      if(quiz) {
+        req.quiz = quiz;
+        next();
+      } else { next(new Error('No existe quizId = ' + quizId)); }
+    }
+  ).catch(function(error)  { next(error); });
 };
-
 
 
 // GET /quizes
@@ -41,7 +40,7 @@ exports.answer=function(req,res){
 // GET /quizes/new
 exports.new=function(req,res){
 	var quiz=models.Quiz.build(// Crea objeto Quiz
-		{pregunta:"Pregunta", respuesta: "Respuesta"}
+		{pregunta:"Pregunta", respuesta: "Respuesta", tema: "Tema"}
 		);
 	res.render('quizes/new', {quiz:quiz, errors:[]});
 };
@@ -57,8 +56,8 @@ var i=0; var errores=new Array();//se convierte en [] con la propiedad message p
 for (var prop in errors) errores[i++]={message: errors[prop]};	
 res.render('quizes/new', {quiz: quiz, errors: errores});
 } else {
-quiz // save: guarda en DB campos pregunta y respuesta de quiz
-.save({fields: ["pregunta", "respuesta"]})
+quiz // save: guarda en DB campos pregunta, respuesta y tema de quiz
+.save({fields: ["pregunta", "respuesta", "tema"]})
 .then( function(){ res.redirect('/quizes')}) ;
 }
 };
@@ -73,6 +72,7 @@ exports.edit=function(req,res){
 exports.update = function(req, res) {
   req.quiz.pregunta  = req.body.quiz.pregunta;
   req.quiz.respuesta = req.body.quiz.respuesta;
+  req.quiz.tema = req.body.quiz.tema;
  
   var errors =  req.quiz.validate();
  
@@ -80,10 +80,9 @@ exports.update = function(req, res) {
 		var i=0; var errores=new Array();//se convierte en [] con la propiedad message por compatibilida con layout
          for (var prop in errors) errores[i++]={message: errors[prop]}; 
         	res.render('quizes/edit', {quiz: req.quiz, errors: errores});
-        	res.render('quizes/edit', {quiz: req.quiz, errors: errores});;
     } else {
 			req.quiz     // save: guarda campos pregunta y respuesta en DB
-        	.save( {fields: ["pregunta", "respuesta"]})
+        	.save( {fields: ["pregunta", "respuesta", "tema"]})
         	.then( function(){ res.redirect('/quizes');});
      }     
 };
