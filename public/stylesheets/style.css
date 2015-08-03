@@ -65,6 +65,8 @@ section>div, nav>div {
 footer {
 	text-align:center;
 }
+span{padding-left:10px}
+
 .clear {
 	clear:both
 }
@@ -81,3 +83,5 @@ footer {
 .borderbotton{
 	border-bottom: 1px solid #666
 }
+.bl{background-color: #EEE}
+.ita{font-style: oblique}

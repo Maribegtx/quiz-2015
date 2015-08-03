@@ -1,7 +1,21 @@
 
     
-    <h2>PREGUNTAS</h2>
+    
     <table>
+    <tr>
+    <td class="bl"><h2>PREGUNTAS</h2></td>
+    <td class="bl">
+    <form method="get" action="/quizes">
+  <label for="resp" class="rem">Buscador</label><br>
+    <input type="text" name="search" value="Texto a buscar" />
+    <input value="Buscar" type="submit">
+</form>
+    </td>
+    </tr>
+    </table>
+
+    <table>
+    
     <tr >
     <td class="borderbotton">TEMA</td>
     <td class="borderbotton">PREGUNTA</td>
@@ -9,9 +23,8 @@
     </tr>
     <tr> 
     <% var i; for (i=0; i < quizes.length; i++){%>
-  
-    <td><%= quizes[i].tema %></td>
     <td><a href="quizes/<%= quizes[i].id%>"><%= quizes[i].pregunta %></a></td>
+    <td class="ita"><%= quizes[i].tema %></td>
     <td><a href="quizes/<%= quizes[i].id%>/edit"><button>Editar</button></a></td>
 
      <td>
