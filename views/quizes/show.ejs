@@ -1,13 +1,35 @@
 
-<h2>Pregunta:</h2> 
-<p><%=quiz.pregunta%></p>
+<h2>Pregunta</h2> 
+
 <form action="/quizes/<%= quiz.id %>/answer" method="get">
 
-    <input name="respuesta" type="text" placeholder="Responda aquí..."/>
-    <br><br>
-    <input value="Enviar" type="submit">
+       <table>
+  <tr>
+  <td><%=quiz.pregunta%></td>
+  </tr>
+  <tr>
+  <td><input name="respuesta" type="text" placeholder="Responda aquí..."/></td>
+  </tr>
+  <tr>
   
+  <td><input value="Enviar" type="submit"></td>
+  </tr>
+  </table>
 </form>
+ 
+  <table>
+  
+  <td><strong>Comentarios</strong></td>
+   <td ><a href="/quizes/<%= quiz.id %>/comments/new">
+<button>Nuevo comentario</button></a></td>
+  </tr>
+  <% for(index in quiz.Comments) { %>
+  <tr>
+  <td colspan="2" class="comments">
+  <%= quiz.Comments[index].texto %>
+  </td>
+  </tr>
+  <% } %>
 
-
+  </table>
 

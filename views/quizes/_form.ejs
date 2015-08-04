@@ -8,23 +8,33 @@
     </span>
   <% } %></p>
   <form name="form">
-<label for="preg" class="rem">Pregunta:</label>
-<br>
-    <input type="text" name="quiz[pregunta]" id="preg"  value="<%= quiz.pregunta%>"/>
-    <br><br>
-    <label for="resp" class="rem">Respuesta:</label><br>
-    <input type="text" name="quiz[respuesta]" id="resp"  value="<%= quiz.respuesta%>"/><br><br>
-    <label for="tem" class="rem">Tema:</label><br>
-    <select name="quiz[tema]">
-  		<option value="eltema" <% if(quiz.tema === "eltema") { %>selected<% } %> >Seleccione tema...</option>
-  		<option value="Otro" <% if(quiz.tema === "Otro") { %>selected<% } %> >Otro</option>
-  		<option value="Humanidades" <% if(quiz.tema === "Humanidades") { %>selected<% } %> >Humanidades</option>
-  		<option value="Ocio" <% if(quiz.tema === "Ocio") { %>selected<% } %> >Ocio</option>
-  		<option value="Ciencia" <% if(quiz.tema === "Ciencia") { %>selected<% } %> >Ciencia</option>
-  		<option value="Tecnología" <% if(quiz.tema === "Tecnología") { %>selected<% } %> >Tecnología</option>
-</select>
-<br><br>
+  <table>
+  <tr>
+  <td>Pregunta:</td>
+  <td><input type="text" name="quiz[pregunta]" id="preg"  value="<%= quiz.pregunta%>"/></td>
+  </tr>
+  <tr>
+  <td>Respuesta:</td>
+  <td><input type="text" name="quiz[respuesta]" id="resp"  value="<%= quiz.respuesta%>"/></td>
+  </tr>
+  <tr>
+  <td>Tema:</td>
+  <td><select name="quiz[tema]">
+      <option value="eltema" <% if(quiz.tema === "eltema") { %>selected<% } %> >Selecciona tema...</option>
+      <option value="Otro" <% if(quiz.tema === "Otro") { %>selected<% } %> >Otro</option>
+      <option value="Humanidades" <% if(quiz.tema === "Humanidades") { %>selected<% } %> >Humanidades</option>
+      <option value="Ocio" <% if(quiz.tema === "Ocio") { %>selected<% } %> >Ocio</option>
+      <option value="Ciencia" <% if(quiz.tema === "Ciencia") { %>selected<% } %> >Ciencia</option>
+      <option value="Tecnología" <% if(quiz.tema === "Tecnología") { %>selected<% } %> >Tecnología</option>
+</select></td>
+  </tr>
+  <tr>
+  <td></td>
+  
+  <td>
     <a href="/quizes"><button type="button">Cancelar</button>
     <input value="Salvar" type="submit">
-  
+    </td>
+    </tr>
+  </table>
 </form>

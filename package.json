@@ -23,7 +23,7 @@
     "morgan": "~1.5.3",
     "pg": "^4.1.1",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^1.7.11",
+    "sequelize": "^2.0.0",
     "serve-favicon": "~2.2.1"
   }
 }

@@ -5,6 +5,8 @@
 html, body {
 	font-family: "Lucida Grande", sans-serif, verdana;
 	height:100%;
+	color:#333;
+
 }
 h1 {
 	font-size:2.2em;
@@ -22,16 +24,24 @@ h2 {
 	color:#8e8e8e;
 	text-transform:lowercase;
 }
+h4 {
+	font-size:1.4em;
+	line-height:1;
+	margin-bottom:0.5em;
+	font-weight:normal;
+	color:#666;
+	text-transform:lowercase;
+}
 a {
-	color: #666;
+	color: #333;
 	text-decoration: none;
 }
 a:hover {
-	color: #333;
+	color: #666;
 }
 #page-wrap {
 	margin:0 auto;
-	color:#666;
+	color:#333;
 	height:100%;
 	background: #eee;
 }
@@ -46,9 +56,13 @@ table {
 	border-spacing: 1px;
 }
 td {
-	width: auto;
 	padding:0.2em;
-	background-color: #DFDFDF
+	background-color: #DFDFDF;
+	vertical-align: top;
+}
+textarea { height: auto; }
+nav li {
+	list-style:none;margin-bottom:0.5em; font-size: 1.1em;
 }
 header {
 	background: url(../images/logo.jpg) no-repeat;
@@ -57,22 +71,25 @@ header {
 	min-height: 50px
 }
 section {
-	border-left:1px solid #999;
+	border-left:1px solid #999; height: auto;font-size: 0.9em
 }
-section>div, nav>div {
+section div, nav div {
 	padding: 20px;
 }
 footer {
 	text-align:center;
 }
-span{padding-left:10px}
 
 .clear {
 	clear:both
 }
+.comments {
+	
+	padding: 5px 20px;font-style: oblique; 
+}
 .txt {
-	float:left;
-	margin: 5px 60px;
+	
+	padding: 5px 60px;
 }
 .section {
 	height:auto
@@ -85,3 +102,8 @@ span{padding-left:10px}
 }
 .bl{background-color: #EEE}
 .ita{font-style: oblique}
+.bold{ font-weight: bold}
+.celda{
+ height: auto;
+ width: 100px;
+ }
