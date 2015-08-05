@@ -80,9 +80,6 @@ footer {
 	text-align:center;
 }
 
-.clear {
-	clear:both
-}
 .comments {
 	
 	padding: 5px 20px;font-style: oblique; 
@@ -104,6 +101,8 @@ footer {
 .ita{font-style: oblique}
 .bold{ font-weight: bold}
 .celda{
- height: auto;
- width: 100px;
+ 	height: auto;
+ 	width: 100px;
  }
+ .right{ 
+ 	float: right; }

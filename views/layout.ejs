@@ -19,6 +19,15 @@
   <div class="txt">
     <h1>Quiz: el juego de las preguntas</h1>
   </div>
+  <% if(!session.user) { %>
+        <span class="right">
+          <a href="/login">Login</a>
+        </span>
+      <% } else { %>
+        <span class="right">
+          <%= session.user.username %>&nbsp;<a href="/logout">Logout</a>
+        </span>
+      <% } %>
 </header>
 <nav  id="n1" role="navigation">
   <div> 
