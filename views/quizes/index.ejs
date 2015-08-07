@@ -8,7 +8,7 @@
     <form method="get" action="/quizes">
   <label for="resp" class="rem">Buscador</label><br>
     <input type="text" name="search" value="Texto a buscar" />
-    <input value="Buscar" type="submit">
+    <input value="Buscar" type="submit" class="myButton">
 </form>
     </td>
     </tr>
@@ -24,13 +24,14 @@
     <% if(session.user) { %>
     <td><a href="quizes/<%= quizes[i].id%>"><%= quizes[i].pregunta %></a></td>
     <td class="ita"><%= quizes[i].tema %></td>
-    <td><a href="quizes/<%= quizes[i].id%>/edit"><button>Editar</button></a></td>
+    <td><a href="quizes/<%= quizes[i].id%>/edit"><button class="myButton">Editar</button></a></td>
      <td>
-          <form method="post" action="/quizes/<%= quizes[i].id %>?_method=delete">
-            <button type="submit" onClick="return confirm('¿Seguro que quieres borrar:\n <%= quizes[i].pregunta %>?');">
+         <form method="post" action="/quizes/<%= quizes[i].id %>?_method=delete">
+            <button type="submit" onClick="return confirm('¿Seguro que quieres borrar:\n <%= quizes[i].pregunta %>?');" class="myButton">
               borrar
             </button>
           </form>
+          
      </td>
      <% } else{%>
     <td colspan="3"><a href="quizes/<%= quizes[i].id%>"><%= quizes[i].pregunta %></a></td>
@@ -40,7 +41,7 @@
     <% }%>
     <% if(session.user) { %>
     <tr>
-    <td colspan="4" class="borderbotton"><a href="/quizes/new"><button type="button"> Crear pregunta</button></a></td>
+    <td colspan="4" class="borderbotton"><a href="/quizes/new"><button type="button" class="myButton"> Crear pregunta</button></a></td>
     </tr>
     <% } %>
     </table>

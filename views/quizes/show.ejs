@@ -18,17 +18,48 @@
 </form>
  
   <table>
-  
+  <tr>
   <td><strong>Comentarios</strong></td>
    <td ><a href="/quizes/<%= quiz.id %>/comments/new">
-<button>Nuevo comentario</button></a></td>
+<button class="myButton">Nuevo comentario</button></a></td>
   </tr>
+  </table>
+  <table>
   <% for(index in quiz.Comments) { %>
-  <tr>
-  <td colspan="2" class="comments">
-  <%= quiz.Comments[index].texto %>
-  </td>
+    <% if(quiz.Comments[index].publicado || session.user) { %>
+      <tr>
+          <td  class="comments"><%= quiz.Comments[index].texto %></td>
+          <% if(session.user) { %>
+          <td>
+          <table>
+          <tr>
+          <td>
+           <% if(quiz.Comments[index].publicado) { %>
+
+          <a href="/quizes/<%= quiz.id %>/comments/<%= quiz.Comments[index].id %>/noPublish">
+          <button class="myButton" >No publicar</button></a>
+          <% }else{%>
+          <a href="/quizes/<%= quiz.id %>/comments/<%= quiz.Comments[index].id %>/publish">
+          <button class="myButton">Publicar</button></a>
+  
+         
+          <% }%>
+          </td>
+          <td>
+<form method="post" action="/quizes/<%= quiz.id %>/comments/<%= quiz.Comments[index].id%>?_method=delete">
+            <button type="submit" onClick="return confirm('¿Seguro que quieres borrar este comentario?');" class="myButton">
+              Borrar
+            </button>
+          </form>
+          
+          </td>
+      </tr>
+      </table>
+      </td>
+  <% } %>
   </tr>
+
+  <% } %>
   <% } %>
 
   </table>

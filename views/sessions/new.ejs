@@ -1,6 +1,13 @@
 
 <h2>Login</h2>
-
+<p><% if (errors.length) {%>
+    <span id='ErrorMsgs'>
+      Error de autenticación: <br/>
+      <% for (var i in errors) { %>
+        <span> <%= errors[i].message %> </span><br/>
+      <% }%>
+    </span>
+  <% } %></p>
 
 <form method='POST' action='/login'>
 <table>
@@ -15,7 +22,7 @@
   </tr>
   <tr>
   <td></td>
-  <td><input name="" type="submit" value="Login" /></td>
+  <td><input name="" type="submit" value="Login" class="myButton" /></td>
   </tr>
   </table>
 </form>

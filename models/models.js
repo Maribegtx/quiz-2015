@@ -53,15 +53,23 @@ Quiz.count().then(function(count){
 	if(count===0){//La tabla solo se inicializa si está vacía
 		Quiz.create({pregunta:'Capital de Italia',
 					respuesta:'Roma',
-					tema: 'otro'
+					tema: 'Otro'
 				});
-		Quiz.create({pregunta:'Capital de Portugal',
-					respuesta:'Lisboa',
-					tema: 'otro'
+		Quiz.create({pregunta:'Un número: Un granjero tiene 17 vacas, todas mueren menos nueve, ¿Cuantas le quedan? ',
+					respuesta:'9',
+					tema: 'Otro'
 				});
-		Quiz.create({pregunta:'Capital de Japón',
-					respuesta:'Tokio',
-					tema: 'otro'
+		Quiz.create({pregunta:'¿Puede un hombre que vive en México ser enterrado en Estados Unidos?',
+					respuesta:'No',
+					tema: 'Otro'
+				});
+		Quiz.create({pregunta:'Pueblo descrito por García Márquez en "1"00 años de soledad".',
+					respuesta:'Macondo',
+					tema: 'Humanidades'
+				});
+		Quiz.create({pregunta:'sí o No: Un vigilante nocturno muere de día, ¿Tiene derecho a cobrar una pensión?.',
+					respuesta:'No',
+					tema: 'Humanidades'
 				})
 		.then(function(){console.log('Base de datos inicializada')});
 

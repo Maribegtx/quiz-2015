@@ -18,16 +18,19 @@
 <header  id="h1">
   <div class="txt">
     <h1>Quiz: el juego de las preguntas</h1>
-  </div>
-  <% if(!session.user) { %>
+</div>
+<div class="log">
+ <% if(!session.user) { %>
         <span class="right">
-          <a href="/login">Login</a>
+          <a href="/login"><button class="myButton">Login</button></a>
         </span>
       <% } else { %>
         <span class="right">
-          <%= session.user.username %>&nbsp;<a href="/logout">Logout</a>
+          <%= session.user.username %>&nbsp;<a href="/logout"><button class="myButton">Logout</button></a>
         </span>
       <% } %>
+</div>
+  
 </header>
 <nav  id="n1" role="navigation">
   <div> 
