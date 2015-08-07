@@ -59,15 +59,15 @@ Quiz.count().then(function(count){
 					respuesta:'9',
 					tema: 'Otro'
 				});
-		Quiz.create({pregunta:'¿Puede un hombre que vive en México ser enterrado en Estados Unidos?',
+		Quiz.create({pregunta:'Sí o No: ¿Puede un hombre que vive en México ser enterrado en Estados Unidos?',
 					respuesta:'No',
 					tema: 'Otro'
 				});
-		Quiz.create({pregunta:'Pueblo descrito por García Márquez en "1"00 años de soledad".',
+		Quiz.create({pregunta:'Pueblo descrito por García Márquez en "100 años de soledad".',
 					respuesta:'Macondo',
 					tema: 'Humanidades'
 				});
-		Quiz.create({pregunta:'sí o No: Un vigilante nocturno muere de día, ¿Tiene derecho a cobrar una pensión?.',
+		Quiz.create({pregunta:'Sí o No: Un vigilante nocturno muere de día, ¿Tiene derecho a cobrar una pensión?.',
 					respuesta:'No',
 					tema: 'Humanidades'
 				})
