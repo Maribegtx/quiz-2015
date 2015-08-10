@@ -27,6 +27,24 @@ app.use(session());
 app.use(methodOverride('_method'));
 app.use(partials());
 
+//Auto logout
+app.use(function(req, res, next){
+    var tPermitido = 60*1000*2;//Tiempo permitido en milisegundos
+    var hInicio = new Date().getTime();//Hora de inicio de la sesión
+
+    if(req.session && req.session.lastAccess) {
+    var tSesion = hInicio - req.session.lastAccess;//Tiempo transcurrido entre el inicio de sesión y el último acceso
+        if (tPermitido <= tSesion){
+        req.session.errors = [{"message": 'Su sesión a caducado. Debe volver a identificarse. '}];
+        delete req.session.user;
+        res.redirect('/login');
+        }
+    }
+    req.session.lastAccess = hInicio;
+    next(); 
+});
+
+
 
 // Helpers dinámicos
 app.use(function(req, res, next) {
@@ -35,6 +53,8 @@ app.use(function(req, res, next) {
 if(!req.path.match(/\/login|\/logout/)) {
     req.session.redir = req.path;
 }
+
+
 // Hacer visible req.session en las vistas
     res.locals.session = req.session;
    next();
