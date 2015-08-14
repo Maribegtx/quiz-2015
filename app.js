@@ -35,9 +35,9 @@ app.use(function(req, res, next){
     if(req.session && req.session.lastAccess) {
     var tSesion = hInicio - req.session.lastAccess;//Tiempo transcurrido entre el inicio de sesión y el último acceso
         if (tPermitido <= tSesion){
-        req.session.errors = [{"message": 'Su sesión a caducado. Debe volver a identificarse. '}];
+        req.session.errors = [{"message": 'Su sesión ha caducado. Debe volver a identificarse. '}];
         delete req.session.user;
-        res.redirect('/login');
+        //res.redirect('/login');
         }
     }
     req.session.lastAccess = hInicio;
