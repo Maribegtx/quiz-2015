@@ -59,6 +59,7 @@ td {
 	padding:0.2em;
 	background-color: #DFDFDF;
 	vertical-align: top;
+	width: auto
 }
 textarea { height: auto; }
 nav li {
@@ -107,6 +108,10 @@ footer {
 .celda{
  	height: auto;
  	width: 100px;
+ }
+ .celda2{
+ 	height: auto;
+ 	width: 300px;
  }
  .right{ 
  	float: right; }

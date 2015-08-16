@@ -1,0 +1,24 @@
+
+<h2>Estadísticas</h2>
+<p><% if (errors.length) {%>
+    <span id='ErrorMsgs'>
+      Error : <br/>
+      <% for (var i in errors) { %>
+        <span> <%= errors[i].message %> </span><br/>
+      <% }%>
+    </span>
+  <% } %></p>
+
+
+<table>
+	<% for (i in statistics) { %>
+		<tr>
+		<td class="celda2"><%= statistics[i].texto %></td>
+		<td><%= statistics[i].valor %> 
+		<% if (statistics[i].comentario) { %>
+		<%= statistics[i].comentario %> 
+		<% } %>
+		</td>
+		</tr>
+	<% } %>
+	</table>
